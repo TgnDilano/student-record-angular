@@ -1,0 +1,27 @@
+<div *ngIf="selectedStudent">
+    <h2>{{selectedStudent.name}} Details</h2><br>
+    <div><span>Name: </span>{{selectedStudent.name}}</div><br>
+    <div><span>Mat: </span>{{selectedStudent.matriculeNumber}}</div><br>
+    <div><u>Transcript</u></div><br>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Credit value</th> 
+            <th>Score</th>
+            <th>Letter Grade</th>
+            <th>Grade Points</th>
+            <th>Course Points</th>
+        </tr>
+        <tr *ngFor="let course of selectedStudent.courses">
+            <td>{{course.course_code}}</td>
+            <td>{{course.credit_value}}</td> 
+            <td>{{course.score_on_100}}</td>
+            <td>{{course.let_grade}}</td>
+            <td>{{course.grade_point}}</td>
+            <td>{{course.course_point}}</td>
+        </tr>
+    </table><br>
+    <div ><span><b>GPA: </b></span><b>{{selectedStudent.GPA}}</b></div>     
+</div>
+<br>
+<button (click)="goBack()">Go back</button>
